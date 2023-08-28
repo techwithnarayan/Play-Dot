@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:playdot/helpers/models/data_model.dart';
+import 'package:playdot/screens/download_screen.dart';
 import 'package:playdot/screens/player_screen.dart';
 import 'package:playdot/screens/player_screen_movie.dart';
 
@@ -133,40 +134,45 @@ class _TitleInfoState extends State<TitleInfo> {
                           size: 40,
                         )),
                   ),
-                  Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.yellow.shade800,
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.shade800,
-                                offset: const Offset(
-                                  6,
-                                  6,
-                                ),
-                                blurRadius: 20,
-                                spreadRadius: 10
-                                //blurStyle: BlurStyle.outer
-                                ),
-                            BoxShadow(
-                                color: Colors.grey.shade800,
-                                offset: const Offset(
-                                  -6,
-                                  -6,
-                                ),
-                                blurRadius: 20,
-                                spreadRadius: 10),
-                          ]),
-                      height: 60,
-                      width: MediaQuery.of(context).size.width * 0.4,
-                      child: const Text(
-                        "DOWNLOAD ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 22,
-                            color: Colors.white),
-                      )),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DownloadScreen()));
+                    },
+                    child: Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.yellow.shade800,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey.shade800,
+                                  offset: const Offset(
+                                    6,
+                                    6,
+                                  ),
+                                  blurRadius: 20,
+                                  spreadRadius: 10
+                                  //blurStyle: BlurStyle.outer
+                                  ),
+                              BoxShadow(
+                                  color: Colors.grey.shade800,
+                                  offset: const Offset(
+                                    -6,
+                                    -6,
+                                  ),
+                                  blurRadius: 20,
+                                  spreadRadius: 10),
+                            ]),
+                        height: 60,
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        child: const Text(
+                          "DOWNLOAD ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 22,
+                              color: Colors.white),
+                        )),
+                  ),
                 ],
               ),
               const SizedBox(

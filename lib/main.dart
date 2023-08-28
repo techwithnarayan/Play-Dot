@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:playdot/screens/homepage.dart';
+
 import 'package:playdot/splash_screen.dart';
 
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: const SplashScreen(),
      // home: GridTilePage(),
 
      theme:ThemeData(
