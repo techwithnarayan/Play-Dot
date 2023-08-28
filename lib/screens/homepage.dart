@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:playdot/helpers/api/api_provider.dart';
 import 'package:playdot/helpers/models/data_model.dart';
 import 'package:playdot/screens/grid_title_screen.dart';
@@ -18,6 +19,9 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+   Future.delayed(Duration(milliseconds: 500),(){
+     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+   });
     _moviesAndSeries = _postDetails.fetchMoviesAndSeries();
   }
 

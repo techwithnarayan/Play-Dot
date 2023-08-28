@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:playdot/helpers/models/data_model.dart';
 import 'package:playdot/screens/title_info_screen.dart';
@@ -8,7 +7,7 @@ class GridTitle extends StatelessWidget {
   final List<Movie> posters;
   const GridTitle({super.key, required this.category, required this.posters});
 
-@override
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
@@ -27,7 +26,6 @@ class GridTitle extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Text(
-            
             category,
           ),
         ),
@@ -45,16 +43,16 @@ class GridTitle extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => TitleInfo(data: posters[index],
-                                  
+                            builder: (context) => TitleInfo(
+                                  data: posters[index],
                                 )));
                   },
                   child: Container(
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                        image: NetworkImage(poster.poster),
-                         fit: BoxFit.cover),
+                            image: NetworkImage(poster.poster),
+                            fit: BoxFit.cover),
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey.shade700),
                     width: 140,
@@ -67,6 +65,3 @@ class GridTitle extends StatelessWidget {
     );
   }
 }
-
-
-

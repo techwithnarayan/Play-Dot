@@ -8,7 +8,10 @@ import 'package:video_player/video_player.dart';
 class PlayerScreen extends StatefulWidget {
   final Movie seriesdata;
   //final Season season;
-  const PlayerScreen({super.key, required this.seriesdata, });
+  const PlayerScreen({
+    super.key,
+    required this.seriesdata,
+  });
 
   @override
   State<PlayerScreen> createState() => _PlayerScreenState();
@@ -58,7 +61,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
       ),
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
+        physics:const BouncingScrollPhysics(),
         child: Column(
           children: [
             _videoPlayerController.value.isInitialized
@@ -67,9 +70,8 @@ class _PlayerScreenState extends State<PlayerScreen> {
                     child: Chewie(controller: _chewieController),
                   )
                 : SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.27,
-    
-                  child: const Center(child: CircularProgressIndicator())),
+                    height: MediaQuery.of(context).size.height * 0.27,
+                    child: const Center(child: CircularProgressIndicator())),
             const SizedBox(
               height: 20,
             ),
@@ -102,7 +104,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
             //       physics: const BouncingScrollPhysics(),
             //       itemCount: widget.seriesdata.seasons?.length??null,
             //       itemBuilder: (context, index) {
-                    
+
             //         print(widget.seriesdata.seasons?.length.toString());
             //         return Padding(
             //           padding: const EdgeInsets.only(
@@ -119,19 +121,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
             //               )),
             //         );
             //       }),
-
-
-
-
-
             // )
-
-
-
-
-
-
-
           ],
         ),
       ),
