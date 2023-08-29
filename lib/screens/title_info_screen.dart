@@ -94,13 +94,6 @@ class _TitleInfoState extends State<TitleInfo> {
                                       titleInfo: widget.data,
                                     )));
                       }
-
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => PlayerScreen(
-                                    seriesdata: widget.data,
-                                  )));
                     },
                     child: Container(
                         decoration: BoxDecoration(
@@ -136,7 +129,10 @@ class _TitleInfoState extends State<TitleInfo> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DownloadScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const DownloadScreen()));
                     },
                     child: Container(
                         alignment: Alignment.center,

@@ -19,8 +19,9 @@ class Movie {
   final String imdbVotes;
   final String imdbID;
   final String type;
- 
-  
+  final String? downloadLink;
+  final String? playLink;
+
   final List<Season>? seasons; // For series only
 
   Movie({
@@ -44,7 +45,8 @@ class Movie {
     required this.imdbVotes,
     required this.imdbID,
     required this.type,
-   
+    this.downloadLink,
+    this.playLink,
     this.seasons, // For series only
   });
 
@@ -52,7 +54,8 @@ class Movie {
     // If the type is series, parse the seasons
     List<Season>? seasonsList;
     if (json['type'] == 'series' && json['seasons'] != null) {
-      seasonsList = List<Season>.from(json['seasons'].map((season) => Season.fromJson(season)));
+      seasonsList = List<Season>.from(
+          json['seasons'].map((season) => Season.fromJson(season)));
     }
 
     return Movie(
@@ -76,7 +79,9 @@ class Movie {
       imdbVotes: json['imdbVotes'],
       imdbID: json['imdbID'],
       type: json['Type'],
-     
+      downloadLink: json['download_link'],
+      playLink: json['play_link'],
+
       seasons: seasonsList, // For series only
     );
   }
@@ -93,7 +98,8 @@ class Season {
 
   factory Season.fromJson(Map<String, dynamic> json) {
     List<dynamic> episodesData = json['episodes'];
-    List<Episode> episodesList = episodesData.map((episode) => Episode.fromJson(episode)).toList();
+    List<Episode> episodesList =
+        episodesData.map((episode) => Episode.fromJson(episode)).toList();
 
     return Season(
       seasonNumber: json['season_number'],

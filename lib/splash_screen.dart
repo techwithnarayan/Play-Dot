@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
 
     // Add a delay before navigating to the HomePage
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 5), () {
       setState(() {
         Navigator.pushReplacement(
           context,
